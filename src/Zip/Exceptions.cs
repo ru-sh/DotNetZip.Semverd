@@ -27,7 +27,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-#if !NETCF
+#if !NETCF && !CORECLR
 using System.Runtime.Serialization;
 #endif
 

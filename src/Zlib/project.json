@@ -1,0 +1,39 @@
+{
+  "version": "1.9.8.1-*",
+  "description": "DotNetZip vNext port",
+  "authors": [ "Dino Chiesa", "ru-sh" ],
+  "copyright": "Dino Chiesa",
+  "requireLicenseAcceptance": true,
+  "tags": [ "CoreCLR", "vNext", "DotNetZip", "Zip" ],
+  "projectUrl": "https://github.com/ru-sh/DotNetZip.Semverd",
+  "licenseUrl": "https://raw.githubusercontent.com/haf/DotNetZip.Semverd/master/LICENSE",
+
+  "dependencies": {
+  },
+
+  "frameworks": {
+
+    "net451": {
+      "dependencies": {
+      }
+    },
+
+    "dotnet5.4": {
+      "compilationOptions": {
+        "define": [ "CORECLR" ]
+      },
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Console": "4.0.0-beta-23516",
+        "System.Runtime": "4.0.21-beta-23516",
+        "System.Text.Encoding": "4.0.10",
+        "System.Text.Encoding.Extensions": "4.0.10",
+        "System.Threading": "4.0.10",
+        "System.Threading.Thread": "4.0.0-beta-23516",
+        "System.Threading.ThreadPool": "4.0.10-beta-23516"
+      }
+    }
+  },
+  "exclude": [
+  ]
+}

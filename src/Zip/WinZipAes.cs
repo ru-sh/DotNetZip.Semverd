@@ -28,12 +28,12 @@
 //
 // ------------------------------------------------------------------
 
+#if AESCRYPTO
 using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 
-#if AESCRYPTO
 namespace Ionic.Zip
 {
     /// <summary>
@@ -240,7 +240,7 @@ namespace Ionic.Zip
     }
 
 
-    #region DONT_COMPILE_BUT_KEEP_FOR_POTENTIAL_FUTURE_USE
+#region DONT_COMPILE_BUT_KEEP_FOR_POTENTIAL_FUTURE_USE
 #if NO
     internal class Util
     {
@@ -310,7 +310,7 @@ namespace Ionic.Zip
     }
 
 #endif
-    #endregion
+#endregion
 
 
 

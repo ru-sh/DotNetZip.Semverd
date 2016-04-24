@@ -298,8 +298,11 @@ namespace Ionic.Zlib
             _z = null;
         }
 
-
+#if CORECLR
+        public void Close()
+#else
         public override void Close()
+#endif
         {
             if (_stream == null) return;
             try
@@ -309,7 +312,11 @@ namespace Ionic.Zlib
             finally
             {
                 end();
+#if CORECLR
+                if (!_leaveOpen) _stream.Dispose();
+#else
                 if (!_leaveOpen) _stream.Close();
+#endif
                 _stream = null;
             }
         }

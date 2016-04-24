@@ -25,7 +25,9 @@
 
 using System;
 using System.IO;
+#if !CORECLR
 using System.Security.Permissions;
+#endif
 
 namespace Ionic.Zip
 {

@@ -41,6 +41,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Reflection;
 using Interop = System.Runtime.InteropServices;
 
 
@@ -2325,7 +2326,7 @@ namespace Ionic.Zip
         {
             get
             {
-                return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+                return typeof(ZipFile).GetTypeInfo().Assembly.GetName().Version;
             }
         }
 

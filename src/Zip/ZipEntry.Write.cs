@@ -1506,8 +1506,10 @@ namespace Ionic.Zip
             output.Close();
 
             // by calling Close() on the deflate stream, we write the footer bytes, as necessary.
+#if !CORECLR
             if ((compressor as Ionic.Zlib.DeflateStream) != null)
                 compressor.Close();
+#endif
 #if BZIP
             else if ((compressor as Ionic.BZip2.BZip2OutputStream) != null)
                 compressor.Close();
@@ -1517,13 +1519,15 @@ namespace Ionic.Zip
 #endif
 #endif
 
-#if !NETCF
+#if !NETCF && !CORECLR
             else if ((compressor as Ionic.Zlib.ParallelDeflateOutputStream) != null)
                 compressor.Close();
 #endif
 
             encryptor.Flush();
+#if !CORECLR
             encryptor.Close();
+#endif
 
             _LengthOfTrailer = 0;
 
@@ -2569,12 +2573,12 @@ namespace Ionic.Zip
             lock (_outputLock)
             {
                 int tid = System.Threading.Thread.CurrentThread.GetHashCode();
-#if ! (NETCF || SILVERLIGHT)
+#if !(NETCF || SILVERLIGHT)
                 Console.ForegroundColor = (ConsoleColor)(tid % 8 + 8);
 #endif
                 Console.Write("{0:000} ZipEntry.Write ", tid);
                 Console.WriteLine(format, varParams);
-#if ! (NETCF || SILVERLIGHT)
+#if !(NETCF || SILVERLIGHT)
                 Console.ResetColor();
 #endif
             }

@@ -738,7 +738,11 @@ namespace Ionic.Zlib
         /// You must call Close on the stream to guarantee that all of the data written in has
         /// been compressed, and the compressed data has been written out.
         /// </remarks>
+#if CORECLR
+        public void Close()
+#else
         public override void Close()
+#endif
         {
             TraceOutput(TraceBits.Session, "Close {0:X8}", this.GetHashCode());
 
@@ -758,9 +762,13 @@ namespace Ionic.Zlib
             _Flush(true);
 
             if (!_leaveOpen)
+#if CORECLR
+                _outStream.Dispose();
+#else
                 _outStream.Close();
+#endif
 
-            _isClosed= true;
+            _isClosed = true;
         }
 
 

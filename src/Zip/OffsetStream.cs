@@ -99,6 +99,8 @@ namespace Ionic.Zip
             throw new NotImplementedException();
         }
 
+
+#if !CORECLR
         void IDisposable.Dispose()
         {
             Close();
@@ -108,7 +110,7 @@ namespace Ionic.Zip
         {
             base.Close();
         }
-
+#endif
     }
 
 }

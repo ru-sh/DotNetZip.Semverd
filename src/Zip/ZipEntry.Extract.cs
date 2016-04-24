@@ -726,7 +726,9 @@ namespace Ionic.Zip
                     if (ExtractToStream(ArchiveStream, output, Encryption, _Crc32))
                         goto ExitTry;
 
+#if !CORECLR
                     output.Close();
+#endif
                 }
 
                 MoveFileInPlace(fileExistsBeforeExtraction, targetFileName, tmpPath, checkLaterForResetDirTimes);
@@ -1237,7 +1239,7 @@ namespace Ionic.Zip
         }
 
 
-        #region Support methods
+#region Support methods
 
         // workitem 7968
 
@@ -1458,7 +1460,7 @@ namespace Ionic.Zip
             return IsDirectory || FileName.EndsWith("/");
         }
 
-        #endregion
+#endregion
 
     }
 }

@@ -1002,7 +1002,8 @@ namespace Ionic.Zip
 
                     if (cr.Errors.Count != 0)
                     {
-                        using (TextWriter tw = new StreamWriter(sourceFile))
+                        using (var sourceFileStream = new FileStream(sourceFile, FileMode.Create))
+                        using (TextWriter tw = new StreamWriter(sourceFileStream))
                         {
                             // first, the source we compiled
                             tw.Write(LiteralSource);

@@ -1,0 +1,46 @@
+{
+  "version": "1.9.8.1-*",
+  "description": "DotNetZip vNext port",
+  "authors": [ "Dino Chiesa", "ru-sh" ],
+  "copyright": "Dino Chiesa",
+  "requireLicenseAcceptance": true,
+  "tags": [ "CoreCLR", "vNext", "DotNetZip", "Zip" ],
+  "projectUrl": "https://github.com/ru-sh/DotNetZip.Semverd",
+  "licenseUrl": "https://raw.githubusercontent.com/haf/DotNetZip.Semverd/master/LICENSE",
+
+  "dependencies": {
+    "Zlib": "1.9.8.1-*"
+  },
+
+  "frameworks": {
+
+    "net451": {
+      "dependencies": {
+      }
+    },
+
+    "dotnet5.4": {
+      "compilationOptions": {
+        "define": [ "CORECLR", "SILVERLIGHT" ]
+      },
+      "dependencies": {
+        "System.Runtime": "4.0.21-beta-23516",
+        "System.IO": "4.0.11-beta-23516",
+        "System.Collections": "4.0.10",
+        "System.Linq": "4.0.0",
+        "System.Text.Encoding": "4.0.10",
+        "System.Text.Encoding.Extensions": "4.0.10",
+        "System.Text.RegularExpressions": "4.0.10",
+        "System.Threading": "4.0.10",
+        "System.Threading.Thread": "4.0.0-beta-23516",
+        "System.Threading.ThreadPool": "4.0.10-beta-23516",
+        "System.Security.AccessControl": "4.0.0-beta-23516",
+        "System.IO.FileSystem": "4.0.1-beta-23516"
+      }
+    }
+  },
+  "exclude": [
+    "Resources/*.cs",
+    "ZipFile.SaveSelfExtractor.cs"
+  ]
+}

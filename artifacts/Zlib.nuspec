@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>DotNetZip.Zlib.vNextUnofficial</id>
+    <version>1.9.8.1</version>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <authors>Dino Chiesa,ru-sh</authors>
+    <owners>Dino Chiesa,ru-sh</owners>
+    <licenseUrl>https://raw.githubusercontent.com/haf/DotNetZip.Semverd/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/ru-sh/DotNetZip.Semverd</projectUrl>
+    <description>DotNetZip vNext port</description>
+    <copyright>Dino Chiesa</copyright>
+    <tags>CoreCLR vNext DotNetZip Zip</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5.1" />
+      <group targetFramework=".NETPlatform5.4">
+        <dependency id="Microsoft.CSharp" version="4.0.1-beta-23516" />
+        <dependency id="System.Collections" version="4.0.11-beta-23516" />
+        <dependency id="System.Console" version="4.0.0-beta-23516" />
+        <dependency id="System.Linq" version="4.0.1-beta-23516" />
+        <dependency id="System.Runtime" version="4.0.21-beta-23516" />
+        <dependency id="System.Text.Encoding" version="4.0.11-beta-23516" />
+        <dependency id="System.Text.Encoding.Extensions" version="4.0.11-beta-23516" />
+        <dependency id="System.Threading" version="4.0.11-beta-23516" />
+        <dependency id="System.Threading.Thread" version="4.0.0-beta-23516" />
+        <dependency id="System.Threading.ThreadPool" version="4.0.10-beta-23516" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework4.5.1" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5.1" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.5.1" />
+      <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework=".NETFramework4.5.1" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
